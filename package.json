@@ -1,0 +1,36 @@
+{
+    "name": "vue-renderer",
+    "version": "1.0.0",
+    "description": "the implemention for vue-renderer",
+    "main": "index.ts",
+    "type": "module",
+    "scripts": {
+        "type-check": "tsc",
+        "clean": "rimraf dist",
+        "local-ser": "node backend/main.js",
+        "compile:all": "swc src -d dist --out-file-extension js --copy-files --strip-leading-paths",
+        "build:dev": "npm run compile:all && npm run local-ser",
+        "build:prod": "npm run type-check && npm run compile:all",
+        "test": "vitest",
+        "test:run": "vitest run",
+        "test:ui": "vitest --ui",
+        "test:coverage": "vitest run --coverage"
+    },
+    "keywords": [
+        "vue",
+        "renderer"
+    ],
+    "devDependencies": {
+        "@swc/cli": "^0.7.9",
+        "@swc/core": "^1.15.8",
+        "@swc/plugin-transform-imports": "^12.3.0",
+        "@vitest/coverage-v8": "^4.0.18",
+        "@vue/reactivity": "3.5.26",
+        "happy-dom": "^20.4.0",
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.18",
+        "ws": "^8.19.0"
+    },
+    "author": "kenny",
+    "license": "ISC"
+}

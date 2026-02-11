@@ -1,0 +1,38 @@
+{
+    "jsc": {
+        "parser": {
+            "syntax": "typescript",
+            "tsx": false,
+            "decorators": true,
+            "dynamicImport": true
+        },
+        "experimental": {
+            "plugins": [
+                [
+                    "@swc/plugin-transform-imports",
+                    {
+                        "^(.*?)\\.ts$": {
+                            "skipDefaultConversion": true,
+                            "transform": "{{matches.[1]}}.js"
+                        }
+                    }
+                ]
+            ]
+        },
+        "target": "es2015",
+        "loose": false,
+        "externalHelpers": false,
+        "keepClassNames": true,
+        "preserveAllComments": false
+    },
+    "module": {
+        "lazy": false,
+        "type": "es6",
+        "strict": false,
+        "strictMode": true,
+        "noInterop": false
+    },
+    "minify": false,
+    "exclude": ["src/types/", ".*\\.test\\.ts$"],
+    "sourceMaps": true
+}

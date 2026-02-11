@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            // this references the "start" script in the sample package.json file above
+            "script": "compile:all",
+            // this specifies the path of your package.json file which contains the script
+            "path": "src",
+            // just a simple label for this task
+            "label": "Compile all source file",
+            // additional description for this task. It doesn't have to be the content of the script
+            "detail": "compile all ts file into dist directory"
+        }
+    ]
+}
